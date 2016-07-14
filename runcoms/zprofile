@@ -1,9 +1,13 @@
 #
 # Executes commands at login pre-zshrc.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+
 #
+# Aliases
+#
+
+alias vi="vim"
+alias v="fasd -f -e vim"
 
 #
 # Browser
@@ -17,8 +21,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vi'
+export VISUAL='vi'
 export PAGER='less'
 
 #
@@ -33,8 +37,6 @@ fi
 # Paths
 #
 
-# Ensure path arrays do not contain duplicates.
-typeset -gU cdpath fpath mailpath path
 
 # Set the the list of directories that cd searches.
 # cdpath=(
@@ -44,8 +46,30 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  $HOME/.pub-cache/bin
+  $HOME/.node/bin
+  $GOPATH/bin
   $path
 )
+
+# Set the list of directories that Zsh searches for manuals
+MANPATH="$(manpath)"
+manpath=(
+  $(brew --prefix coreutils)/libexec/gnubin
+  $manpath
+)
+
+# Add Homebrew to completion path
+fpath=(
+  /usr/local/bin
+  $fpath
+)
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path manpath
+export PATH
+export MANPATH
+export FPATH
 
 #
 # Less

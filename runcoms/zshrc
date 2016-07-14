@@ -11,3 +11,57 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# Docker
+eval "$(docker-machine env default 2>/dev/null)"
+
+# iTerm2 shell integration
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+# Ruby initialization
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Pipe to multiple outputs
+setopt MULTIOS
+
+# Make cd=pushd
+setopt AUTO_PUSHD
+
+# This will use named dirs when possible
+setopt AUTO_NAME_DIRS
+
+# If we have a glob this will expand it
+setopt GLOB_COMPLETE
+
+setopt PUSHD_MINUS
+
+# Blank pushd goes to home
+setopt PUSHD_TO_HOME
+
+# Ignore multiple directories for the stack (useful?)
+setopt PUSHD_IGNORE_DUPS
+
+# use magic (set by default but can't hurt!)
+setopt ZLE
+
+# Disable Ctrl-s 
+setopt NO_FLOW_CONTROL
+
+# Prevent clobbering
+setopt NO_CLOBBER
+
+# Case insensitive globbing
+setopt NO_CASE_GLOB
+
+# Be reasonable!
+setopt NUMERIC_GLOB_SORT
+
+# Extended glob
+setopt EXTENDED_GLOB
+
+bindkey -M viins '' push-line-or-edit
+
+bindkey -M viins ' ' magic-space
+
+# added by travis gem
+[ -f /Users/ganders/.travis/travis.sh ] && source /Users/ganders/.travis/travis.sh

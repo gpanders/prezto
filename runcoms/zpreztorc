@@ -30,8 +30,13 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'homebrew' \
+  'git' \
   'utility' \
   'completion' \
+  'fasd' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 #
@@ -46,10 +51,10 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -92,7 +97,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'ganders'
 
 #
 # Ruby
@@ -133,17 +138,20 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #   'root'
 #
 # Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+zstyle ':prezto:module:syntax-highlighting' styles \
+  'builtin' 'fg=cyan' \
+  'command' 'fg=cyan' \
+  'function' 'fg=cyan' \
+  'alias' 'fg=cyan' \
+  'hashed-command' 'fg=cyan' \
+  'precommand' 'fg=cyan,underline'
 
 #
 # Terminal
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
@@ -162,4 +170,4 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
-# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+zstyle ':prezto:module:tmux:iterm' integrate 'yes'

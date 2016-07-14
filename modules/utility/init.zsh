@@ -48,15 +48,15 @@ alias sftp='noglob sftp'
 # Define general aliases.
 alias _='sudo'
 alias b='${(z)BROWSER}'
-alias cp="${aliases[cp]:-cp} -i"
+#alias cp="${aliases[cp]:-cp} -i"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
-alias ln="${aliases[ln]:-ln} -i"
-alias mkdir="${aliases[mkdir]:-mkdir} -p"
-alias mv="${aliases[mv]:-mv} -i"
+#alias ln="${aliases[ln]:-ln} -i"
+#alias mkdir="${aliases[mkdir]:-mkdir} -p"
+#alias mv="${aliases[mv]:-mv} -i"
 alias p='${(z)PAGER}'
 alias po='popd'
 alias pu='pushd'
-alias rm="${aliases[rm]:-rm} -i"
+#alias rm="${aliases[rm]:-rm} -i"
 alias type='type -a'
 
 # ls
@@ -91,7 +91,7 @@ else
 fi
 
 alias l='ls -1A'         # Lists in one column, hidden files.
-alias ll='ls -lh'        # Lists human readable sizes.
+alias ll='ls -lAh'        # Lists human readable sizes.
 alias lr='ll -R'         # Lists human readable sizes, recursively.
 alias la='ll -A'         # Lists human readable sizes, hidden files.
 alias lm='la | "$PAGER"' # Lists human readable sizes, hidden files through pager.
