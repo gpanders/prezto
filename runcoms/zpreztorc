@@ -33,10 +33,8 @@ zstyle ':prezto:load' pmodule \
   'ruby' \
   'python' \
   'git' \
-  'gnu-utility' \
   'utility' \
   'completion' \
-  'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
@@ -134,13 +132,12 @@ zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'cursor' \
+  'pattern' \
+  'line'
 #
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
@@ -152,8 +149,8 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'precommand'      'fg=cyan,underline'
 
 # Set syntax pattern styles.
-# zstyle ':prezto:module:syntax-highlighting' pattern \
-#   'rm*-rf*' 'fg=white,bold,bg=red'
+zstyle ':prezto:module:syntax-highlighting' pattern \
+  'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal

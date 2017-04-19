@@ -47,14 +47,6 @@ path=(
   $path
 )
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  # Add Homebrew to completion path
-  fpath=(
-    /usr/local/bin
-    $fpath
-  )
-fi
-
 #
 # Less
 #
