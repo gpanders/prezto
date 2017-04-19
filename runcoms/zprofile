@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='vi'
-export VISUAL='vi'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
 
 #
@@ -46,14 +46,6 @@ path=(
   /usr/local/{bin,sbin}
   $path
 )
-
-if [[ "$OSTYPE" == darwin* ]]; then
-  # Add Homebrew to completion path
-  fpath=(
-    /usr/local/bin
-    $fpath
-  )
-fi
 
 #
 # Less

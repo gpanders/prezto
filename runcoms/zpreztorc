@@ -30,13 +30,12 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
-  'ruby' \
-  'python' \
   'git' \
-  'gnu-utility' \
+  'python' \
   'utility' \
   'completion' \
   'fasd' \
+  'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
@@ -109,7 +108,7 @@ zstyle ':prezto:module:prompt' theme 'ganders'
 #
 
 # Auto switch the Ruby version on directory change.
-zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+# zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 #
 # Screen
@@ -126,7 +125,7 @@ zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 #
 
 # Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
 #
 # Syntax Highlighting
@@ -134,14 +133,13 @@ zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'line' \
-#   'cursor' \
-#   'root'
-#
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'cursor' \
+  'pattern' \
+  'line'
+
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
   'builtin'         'fg=cyan' \
@@ -152,15 +150,15 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'precommand'      'fg=cyan,underline'
 
 # Set syntax pattern styles.
-# zstyle ':prezto:module:syntax-highlighting' pattern \
-#   'rm*-rf*' 'fg=white,bold,bg=red'
+ zstyle ':prezto:module:syntax-highlighting' pattern \
+   'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
