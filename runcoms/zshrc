@@ -47,3 +47,4 @@ bindkey -M viins '' push-line-or-edit
 
 bindkey -M viins ' ' magic-space
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

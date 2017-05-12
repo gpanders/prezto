@@ -39,6 +39,7 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'fasd' \
+  'osx' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
