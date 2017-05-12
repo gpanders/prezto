@@ -104,6 +104,9 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'ganders'
 
+# Set how themes that use promptpwd function display the pwd, can be 'short', 'long', or 'full'
+# zstyle ':prezto:module:prompt' pwd-length 'short'
+
 #
 # Ruby
 #
@@ -183,3 +186,6 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 
 # Integrate with iTerm2.
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+# Set the default session name:
+# zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
