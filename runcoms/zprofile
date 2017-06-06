@@ -13,6 +13,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
 
+BROWSER='xdg-open'
+
 #
 # Editors
 #
