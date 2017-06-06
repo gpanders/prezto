@@ -50,3 +50,7 @@ bindkey -M viins '' push-line-or-edit
 
 bindkey -M viins ' ' magic-space
 
+# Disable touchscreen
+xinput disable 9
+xinput disable 10
+xinput disable 17
