@@ -146,7 +146,6 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
   'brackets' \
-  'cursor' \
   'pattern' \
   'line'
 
