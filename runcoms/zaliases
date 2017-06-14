@@ -1,3 +1,5 @@
+# Custom aliases
 alias awsup='aws ec2 start-instances --instance-ids "$AWS_INSTANCE_ID"'
 alias awsdown='aws ec2 stop-instances --instance-ids "$AWS_INSTANCE_ID"'
 
+# vim:filetype=zsh
