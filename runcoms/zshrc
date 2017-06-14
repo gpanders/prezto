@@ -10,6 +10,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Load custom aliases
+if [[ -s "${ZDOTDIR:-$HOME}/.zaliases" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zaliases"
+fi
+
 # Load ROS environment variables
 source /opt/ros/kinetic/setup.zsh
 
