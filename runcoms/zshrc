@@ -48,7 +48,5 @@ setopt NUMERIC_GLOB_SORT
 # Extended glob
 setopt EXTENDED_GLOB
 
-bindkey -M viins '' push-line-or-edit
-
 bindkey -M viins ' ' magic-space
 
