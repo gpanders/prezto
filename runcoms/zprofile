@@ -11,6 +11,8 @@
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
+elif [[ "$OSTYPE" == linux-gnu ]]; then
+  export BROWSER='xdg-open'
 fi
 
 BROWSER='xdg-open'
@@ -22,6 +24,14 @@ BROWSER='xdg-open'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
+
+# Use neovim if installed
+if type nvim > /dev/null 2>&1; then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+  alias vim='nvim'
+  alias vi='nvim'
+fi
 
 #
 # Language
