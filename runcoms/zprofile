@@ -15,8 +15,6 @@ elif [[ "$OSTYPE" == linux-gnu ]]; then
   export BROWSER='xdg-open'
 fi
 
-BROWSER='xdg-open'
-
 #
 # Editors
 #
