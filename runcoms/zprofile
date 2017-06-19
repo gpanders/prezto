@@ -24,7 +24,7 @@ export VISUAL='vi'
 export PAGER='less'
 
 # Use neovim if present
-if type nvim > /dev/null 2>&1; then
+if (( $+commands[nvim] )); then
   export EDITOR='nvim'
   export VISUAL='nvim'
   alias vim='nvim'
