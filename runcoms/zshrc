@@ -10,6 +10,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Load custom aliases
+if [[ -s "${ZDOTDIR:-$HOME}/.zaliases" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zaliases"
+fi
+
 # Pipe to multiple outputs
 setopt MULTIOS
 
@@ -43,8 +48,11 @@ setopt NUMERIC_GLOB_SORT
 # Extended glob
 setopt EXTENDED_GLOB
 
-bindkey -M viins '' push-line-or-edit
-
 bindkey -M viins ' ' magic-space
 
+# Use emacs bindings for history search
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward 
+
+# iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

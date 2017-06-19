@@ -48,14 +48,6 @@ path=(
   $path
 )
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  # Add Homebrew to completion path
-  fpath=(
-    /usr/local/bin
-    $fpath
-  )
-fi
-
 #
 # Less
 #
@@ -74,9 +66,14 @@ fi
 #
 # Temporary Files
 #
-
-if [[ ! -d "$TMPDIR" ]]; then
-  export TMPDIR="$(mktemp -d)"
+#
+if [[ -z "$TMPDIR" ]]; then
+  export TMPDIR="/tmp/zsh-$UID"
 fi
 
-TMPPREFIX="${TMPDIR%/}/zsh"
+if [[ ! -d "$TMPDIR" ]]; then
+  mkdir "$TMPDIR"
+  chmod 700 "$TMPDIR"
+fi
+
+# vim:filetype=zsh
