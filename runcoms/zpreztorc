@@ -37,6 +37,7 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'fasd' \
   'fzf' \
+  'interactive-cd' \
   'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
