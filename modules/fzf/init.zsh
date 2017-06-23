@@ -12,25 +12,31 @@ fi
 
 source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# Use ag if available
+if (( $+commands[ag] )); then
+  export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git -g ''"
+  _fzf_compgen_path() {
+    ag --hidden --ignore .git -g '' "$1"
+  }
+else
+  export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print | sed s/^..//"
+fi
+
+# Use git ls-tree for speed - if it fails (i.e. not in a git directory) default
+# to $FZF_DEFAULT_COMMAND
+export FZF_DEFAULT_COMMAND="(git ls-tree -r --name-only HEAD || $FZF_DEFAULT_COMMAND) 2>/dev/null"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--inline-info"
 
-# Change working directory interactively
-unalias j 2>/dev/null
-j() {
-  if [[ -z "$*" ]]; then
-    cd "$(_j -l 2>&1 | fzf-tmux +s --tac | sed 's/^[0-9,.]* *//')"
-  else
-    _last_j_args="$@"
-    _j "$@"
-  fi
-}
+# If fasd is loaded, pipe output to fzf
+# Note that the `fzf-tmux` command works regardless of whether or not the user is
+# in a tmux session. If no tmux session is detected, it acts just like `fzf`
+if zstyle -t ':prezto:module:fasd' loaded; then
+  unalias j 2>/dev/null
+  fzf_cd() {
+    local dir
+    dir="$(fasd -Rdl "$1" | fzf-tmux -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+  }
+  alias j='fzf_cd'
+fi
 
-# Open files with the default editor
-_fzf_e() {
-  local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && ${(z)VISUAL:-${(z)EDITOR}} "${files[@]}"
-}
-
-alias e=_fzf_e
