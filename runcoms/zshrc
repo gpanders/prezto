@@ -53,12 +53,7 @@ setopt EXTENDED_GLOB
 
 bindkey -M viins ' ' magic-space
 
-# Use emacs bindings for history search
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward 
-
 # Disable touchscreen
 xinput disable 9
 xinput disable 10
 xinput disable 17
-

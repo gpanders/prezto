@@ -30,11 +30,13 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
-  'git' \
+  'ruby' \
   'python' \
+  'git' \
   'utility' \
   'completion' \
   'fasd' \
+  'fzf' \
   'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
@@ -177,6 +179,22 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the terminal multiplexer title format.
 # zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+
+#
+# Fuzzy file finder (fzf)
+#
+
+# Use keybindings
+zstyle ':prezto:module:fzf' key-bindings 'yes'
+
+# Use completion
+zstyle ':prezto:module:fzf' completion 'yes'
+
+# Set height of the fzf results (comment for full screen)
+zstyle ':prezto:module:fzf' height '30%'
+
+# Open fzf results in a tmux pane (if using tmux)
+zstyle ':prezto:module:fzf' tmux 'yes'
 
 #
 # Tmux
