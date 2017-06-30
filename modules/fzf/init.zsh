@@ -5,7 +5,11 @@
 #   Greg Anders <greg.p.anders@gmail.com>
 #
 
-# Return if requirements are not found.
+# Add manually installed fzf to path
+if [[ -s "$HOME/.fzf/bin/fzf" ]]; then
+  path=("$HOME/.fzf/bin" $path)
+fi
+
 if (( ! $+commands[fzf] )); then
   return 1
 fi
@@ -66,4 +70,3 @@ if zstyle -t ':prezto:module:fasd' loaded; then
   }
   alias j='__fzf_cd'
 fi
-
