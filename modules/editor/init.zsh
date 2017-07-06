@@ -78,7 +78,15 @@ zle -N edit-command-line
 #
 # Functions
 #
-
+# Runs bindkey but for all of the keymaps. Running it with no arguments will
+# print out the mappings for all of the keymaps.
+function bindkey-all {
+  local keymap=''
+  for keymap in $(bindkey -l); do
+    [[ "$#" -eq 0 ]] && printf "#### %s\n" "${keymap}" 1>&2
+    bindkey -M "${keymap}" "$@"
+  done
+}
 # Exposes information about the Zsh Line Editor via the $editor_info associative
 # array.
 function editor-info {
@@ -273,6 +281,14 @@ fi
 #
 # Emacs and Vi Key Bindings
 #
+
+# Ctrl + Left and Ctrl + Right bindings to forward/backward word
+for keymap in viins vicmd; do
+  for key in "${(s: :)key_info[ControlLeft]}"
+    bindkey -M "$keymap" "$key" vi-backward-word
+  for key in "${(s: :)key_info[ControlRight]}"
+    bindkey -M "$keymap" "$key" vi-forward-word
+done
 
 for keymap in 'emacs' 'viins'; do
   bindkey -M "$keymap" "$key_info[Home]" beginning-of-line
