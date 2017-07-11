@@ -15,9 +15,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zaliases" ]]; then
   source "${ZDOTDIR:-$HOME}/.zaliases"
 fi
 
-# Load ROS environment variables
-source /opt/ros/kinetic/setup.zsh
-
 # Pipe to multiple outputs
 setopt MULTIOS
 
@@ -57,3 +54,8 @@ bindkey -M viins ' ' magic-space
 xinput disable 9
 xinput disable 10
 xinput disable 17
+
+# Configure ROS
+if [ -f $HOME/.rosrc ]; then
+  source $HOME/.rosrc
+fi
