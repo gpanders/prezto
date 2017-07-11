@@ -212,3 +212,12 @@ zstyle ':prezto:module:fzf' tmux 'yes'
 
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
+
+#
+# Utility
+#
+
+# safe-ops is enabled by default. This aliases rm, mv, cp, and ln so that they
+# prompt before deleting or copying over files. Set to no to disable this safer
+# behavior.
+# zstyle ':prezto:module:utility' safe-ops yes

@@ -19,6 +19,9 @@
 [submodule "modules/prompt/functions/pure"]
 	path = modules/prompt/external/pure
 	url = https://github.com/gpanders/pure.git
+[submodule "modules/fasd/external"]
+	path = modules/fasd/external
+	url = https://github.com/clvv/fasd
 [submodule "modules/interactive-cd/external"]
 	path = modules/interactive-cd/external
 	url = https://github.com/changyuheng/zsh-interactive-cd.git
