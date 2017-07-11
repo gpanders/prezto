@@ -66,18 +66,27 @@ alias sftp='noglob sftp'
 # Define general aliases.
 alias _='sudo'
 alias b='${(z)BROWSER}'
-alias cp="${aliases[cp]:-cp} -i"
+
 alias diffu="diff --unified"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
-alias ln="${aliases[ln]:-ln} -i"
 alias mkdir="${aliases[mkdir]:-mkdir} -p"
-alias mv="${aliases[mv]:-mv} -i"
 alias p='${(z)PAGER}'
 alias po='popd'
 alias pu='pushd'
-alias rm="${aliases[rm]:-rm} -i"
 alias sa='alias | grep -i'
 alias type='type -a'
+
+# Safe ops. Ask the user before doing anything destructive.
+alias rmi="${aliases[rm]:-rm} -i"
+alias mvi="${aliases[mv]:-mv} -i"
+alias cpi="${aliases[cp]:-cp} -i"
+alias lni="${aliases[ln]:-ln} -i"
+if zstyle -T ':prezto:module:utility' safe-ops; then
+  alias rm="${aliases[rm]:-rm} -i"
+  alias mv="${aliases[mv]:-mv} -i"
+  alias cp="${aliases[cp]:-cp} -i"
+  alias ln="${aliases[ln]:-ln} -i"
+fi
 
 # ls
 if is-callable 'dircolors'; then
