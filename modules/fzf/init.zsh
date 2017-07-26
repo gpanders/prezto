@@ -22,6 +22,8 @@ if zstyle -t ':prezto:module:fzf' completion; then
   [[ $- == *i* ]] && source "${0:h}/external/shell/completion.zsh" 2>/dev/null
 fi
 
+export FZF_DEFAULT_OPTS=""
+
 # Set height of fzf results
 zstyle -s ':prezto:module:fzf' height FZF_HEIGHT
 
@@ -33,7 +35,7 @@ if zstyle -t ':prezto:module:fzf' tmux && [ -n "$TMUX_PANE" ]; then
 else
   export FZF_TMUX=0
   if [ ! -z "$FZF_HEIGHT" ]; then
-    export FZF_DEFAULT_OPTS="--height ${FZF_HEIGHT} --reverse"
+    export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --height ${FZF_HEIGHT} --reverse"
   fi
 fi
 
@@ -44,9 +46,9 @@ __fzf_prog() {
 
 # Use ag if available
 if (( $+commands[ag] )); then
-  export FZF_DEFAULT_COMMAND="ag --hidden --ignore .git -g ''"
+  export FZF_DEFAULT_COMMAND="ag -g ''"
   _fzf_compgen_path() {
-    ag --hidden --ignore .git -g '' "$1"
+    ag -g '' "$1"
   }
 else
   export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print | sed s/^..//"
@@ -56,7 +58,24 @@ fi
 # to $FZF_DEFAULT_COMMAND
 export FZF_DEFAULT_COMMAND="(git ls-tree -r --name-only HEAD || $FZF_DEFAULT_COMMAND) 2>/dev/null"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Uncomment to use --inline-info option
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --inline-info"
+
+# Solarized Dark colorscheme
+# https://github.com/junegunn/fzf/wiki/Color-schemes
+export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS}
+  --color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254
+  --color info:254,prompt:37,spinner:108,pointer:235,marker:235"
+
+# Use preview window with Ctrl-T
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+# If tree command is installed, show directory contents in preview pane when
+# using ALT-C
+if (( $+commands[tree] )); then
+  export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+fi
 
 # If fasd is loaded, pipe output to fzf
 # Note that the `fzf-tmux` command works regardless of whether or not the user is
