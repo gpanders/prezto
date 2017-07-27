@@ -14,19 +14,27 @@ commands.
 To disable `ls` color, add the following line to *zpreztorc*; when coloring is
 disabled, type indicators (\*, /, =>, @, =, |, %) will be appended to entries.
 
-    zstyle ':prezto:module:utility:ls' color 'no'
+```sh
+zstyle ':prezto:module:utility:ls' color 'no'
+```
 
 To disable `diff` highlighting, add the following line to *zpreztorc*:
 
-    zstyle ':prezto:module:utility:diff' color 'no'
+```sh
+zstyle ':prezto:module:utility:diff' color 'no'
+```
 
 To disable `wdiff` highlighting, add the following line to *zpreztorc*:
 
-    zstyle ':prezto:module:utility:wdiff' color 'no'
+```sh
+zstyle ':prezto:module:utility:wdiff' color 'no'
+```
 
 To disable `make` highlighting, add the following line to *zpreztorc*:
 
-    zstyle ':prezto:module:utility:make' color 'no'
+```sh
+zstyle ':prezto:module:utility:make' color 'no'
+```
 
 Aliases
 -------
@@ -57,8 +65,8 @@ Aliases
   - `history`
   - `locate`
   - `rake`
-  - `rsync`
-  - `scp`
+  - `rsync` (selectively enabled for local files)
+  - `scp` (selectively enabled for local files)
   - `sftp`
 
 ### General
@@ -109,9 +117,11 @@ Aliases
 
 ### Safe ops
 
-By default, `cp`,`ln`, `mv`, and `rm` are aliased to their interactive variants.
-If this is not desired, you can disable it by adding
-`zstyle ':prezto:module:utility' safe-ops no` to your zpreztorc.
+By default, `cp`,`ln`, `mv` and `rm` are aliased to their interactive variants.
+If this is not desired, it can be disabled by adding the following line to
+*zpreztorc*:
+
+    zstyle ':prezto:module:utility' safe-ops 'no'.
 
 In addition, the following aliases have been added:
 
@@ -139,6 +149,7 @@ Functions
   - `mkdcd` makes a directory and changes to it.
   - `popdls` pops an entry off the directory stack and lists its contents.
   - `pushdls` pushes an entry onto the directory stack and lists its contents.
+  - `noremoteglob` enable local path globbing but disable remote path globbing.
 
 ### Developer
 
