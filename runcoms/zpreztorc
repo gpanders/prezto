@@ -30,6 +30,7 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'ssh' \
   'ruby' \
   'python' \
   'git' \
@@ -39,7 +40,6 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'fasd' \
   'fzf' \
-  'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
@@ -159,7 +159,7 @@ zstyle ':prezto:module:prompt' theme 'pure'
 #
 
 # Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
 #
 # Syntax Highlighting
@@ -216,7 +216,7 @@ zstyle ':prezto:module:fzf' completion 'yes'
 zstyle ':prezto:module:fzf' height '30%'
 
 # Open fzf results in a tmux pane (if using tmux)
-zstyle ':prezto:module:fzf' tmux 'yes'
+# zstyle ':prezto:module:fzf' tmux 'yes'
 
 #
 # Tmux
@@ -229,7 +229,7 @@ zstyle ':prezto:module:fzf' tmux 'yes'
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
-zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
