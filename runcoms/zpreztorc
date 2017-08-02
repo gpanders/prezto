@@ -70,6 +70,12 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Allow the zsh prompt context to be shown.
 # zstyle ':prezto:module:editor' ps-context 'yes'
 
+# Set icon to use for different editing modes
+zstyle ':prezto:module:editor:info:keymap:primary'   format "❯"
+zstyle ':prezto:module:editor:info:keymap:alternate' format "❮"
+# zstyle ':prezto:module:editor:info:keymap:overwrite' format "❯"
+# zstyle ':prezto:module:editor:info:keymap:insert' format "❯"
+
 #
 # Git
 #
@@ -172,13 +178,13 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin'                         'fg=yellow' \
+  'builtin'                         'fg=green' \
   'command'                         'fg=green' \
   'function'                        'fg=green' \
   'alias'                           'fg=green' \
   'hashed-command'                  'fg=green' \
-  'precommand'                      'fg=cyan,underline' \
-  'reserved-word'                   'fg=green' \
+  'precommand'                      'fg=green,underline' \
+  'reserved-word'                   'fg=yellow' \
   'dollar-double-quoted-argument'   'fg=red' \
   'double-quoted-argument'          'fg=cyan' \
   'dollar-quoted-argument'          'fg=red' \
