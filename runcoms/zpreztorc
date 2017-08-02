@@ -178,17 +178,13 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin'                         'fg=green' \
-  'command'                         'fg=green' \
-  'function'                        'fg=green' \
-  'alias'                           'fg=green' \
-  'hashed-command'                  'fg=green' \
-  'precommand'                      'fg=green,underline' \
-  'reserved-word'                   'fg=yellow' \
-  'dollar-double-quoted-argument'   'fg=red' \
-  'double-quoted-argument'          'fg=cyan' \
-  'dollar-quoted-argument'          'fg=red' \
-  'single-quoted-argument'          'fg=cyan'
+  'builtin'                         'fg=cyan' \
+  'command'                         'fg=cyan' \
+  'function'                        'fg=cyan' \
+  'alias'                           'fg=cyan' \
+  'hashed-command'                  'fg=cyan' \
+  'precommand'                      'fg=cyan,underline' \
+  'reserved-word'                   'fg=yellow'
 
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \
