@@ -62,11 +62,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # Uncomment to use --inline-info option
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --inline-info"
 
-# Solarized Dark colorscheme
-# https://github.com/junegunn/fzf/wiki/Color-schemes
-export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS}
-  --color dark,hl:33,hl+:37,fg+:235,bg+:136,fg+:254
-  --color info:254,prompt:37,spinner:108,pointer:235,marker:235"
+# Set colors defined by user
+source "${0:h}/colors.zsh"
+zstyle -s ':prezto:module:fzf' colorscheme FZF_COLOR
+if [[ ! -z "$FZF_COLOR" && ${fzf_colors["$FZF_COLOR"]} ]]; then
+  export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --color ${fzf_colors["$FZF_COLOR"]}"
+fi
 
 # Use preview window with Ctrl-T
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
