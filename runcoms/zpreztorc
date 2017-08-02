@@ -168,17 +168,21 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 zstyle ':prezto:module:syntax-highlighting' highlighters \
   'main' \
   'brackets' \
-  'pattern' \
-  'line'
+  'pattern'
 
 # Set syntax highlighting styles.
 zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin'         'fg=cyan' \
-  'command'         'fg=cyan' \
-  'function'        'fg=cyan' \
-  'alias'           'fg=cyan' \
-  'hashed-command'  'fg=cyan' \
-  'precommand'      'fg=cyan,underline'
+  'builtin'                         'fg=yellow' \
+  'command'                         'fg=green' \
+  'function'                        'fg=green' \
+  'alias'                           'fg=green' \
+  'hashed-command'                  'fg=green' \
+  'precommand'                      'fg=cyan,underline' \
+  'reserved-word'                   'fg=green' \
+  'dollar-double-quoted-argument'   'fg=red' \
+  'double-quoted-argument'          'fg=cyan' \
+  'dollar-quoted-argument'          'fg=red' \
+  'single-quoted-argument'          'fg=cyan'
 
 # Set syntax pattern styles.
 zstyle ':prezto:module:syntax-highlighting' pattern \
@@ -215,6 +219,13 @@ zstyle ':prezto:module:fzf' height '30%'
 
 # Open fzf results in a tmux pane (if using tmux)
 zstyle ':prezto:module:fzf' tmux 'yes'
+
+# Set colorscheme
+# A list of available colorschemes is available in $ZPREZTODIR/modules/fzf/color.zsh
+# To add more color schemes of your own, consult
+# https://github.com/junegunn/fzf/wiki/Color-schemes and add values to the
+# color.zsh file accordingly
+zstyle ':prezto:module:fzf' colorscheme 'Solarized Light'
 
 #
 # Tmux
