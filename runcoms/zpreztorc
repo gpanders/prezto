@@ -216,6 +216,13 @@ zstyle ':prezto:module:fzf' height '30%'
 # Open fzf results in a tmux pane (if using tmux)
 zstyle ':prezto:module:fzf' tmux 'yes'
 
+# Set colorscheme
+# A list of available colorschemes is available in $ZPREZTODIR/modules/fzf/color.zsh
+# To add more color schemes of your own, consult
+# https://github.com/junegunn/fzf/wiki/Color-schemes and add values to the
+# color.zsh file accordingly
+zstyle ':prezto:module:fzf' colorscheme 'Solarized Light'
+
 #
 # Tmux
 #
