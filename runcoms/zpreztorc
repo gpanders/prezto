@@ -70,6 +70,12 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Allow the zsh prompt context to be shown.
 # zstyle ':prezto:module:editor' ps-context 'yes'
 
+# Set icon to use for different editing modes
+zstyle ':prezto:module:editor:info:keymap:primary'   format "❯"
+zstyle ':prezto:module:editor:info:keymap:alternate' format "❮"
+# zstyle ':prezto:module:editor:info:keymap:overwrite' format "❯"
+# zstyle ':prezto:module:editor:info:keymap:insert' format "❯"
+
 #
 # Git
 #
