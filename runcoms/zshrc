@@ -11,8 +11,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Load custom aliases
-if [[ -s "${ZDOTDIR:-$HOME}/.zaliases" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zaliases"
+if [[ -d "${ZDOTDIR:-$HOME}/.zprezto/aliases" ]]; then
+  for f in "${ZDOTDIR:-$HOME}"/.zprezto/aliases/*.zsh; do
+    source "$f"
+  done
 fi
 
 # Pipe to multiple outputs
