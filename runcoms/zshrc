@@ -12,8 +12,8 @@ fi
 
 # Load custom aliases
 if [[ -d "${ZDOTDIR:-$HOME}/.zprezto/aliases" ]]; then
-  for f in "${ZDOTDIR:-$HOME}"/.zprezto/aliases/*.zsh; do
-    source "$f"
+  for file in "${ZDOTDIR:-$HOME}"/.zprezto/aliases/*.zsh; do
+    source "$file"
   done
 fi
 
