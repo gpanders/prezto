@@ -34,6 +34,7 @@ zstyle ':prezto:load' pmodule \
   'ruby' \
   'python' \
   'git' \
+  'tmux' \
   'homebrew' \
   'gnu-utility' \
   'utility' \
@@ -222,7 +223,7 @@ zstyle ':prezto:module:fzf' completion 'yes'
 zstyle ':prezto:module:fzf' height '30%'
 
 # Open fzf results in a tmux pane (if using tmux)
-# zstyle ':prezto:module:fzf' tmux 'yes'
+zstyle ':prezto:module:fzf' tmux 'yes'
 
 # Set colorscheme
 # A list of available colorschemes is available in $ZPREZTODIR/modules/fzf/color.zsh
