@@ -51,6 +51,3 @@ setopt NUMERIC_GLOB_SORT
 setopt EXTENDED_GLOB
 
 bindkey -M viins ' ' magic-space
-
-# iTerm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
