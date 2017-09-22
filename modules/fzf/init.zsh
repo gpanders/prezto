@@ -50,13 +50,8 @@ if (( $+commands[ag] )); then
   _fzf_compgen_path() {
     ag -g '' "$1"
   }
-else
-  export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -prune -o -type f -print -o -type l -print | sed s/^..//"
 fi
 
-# Use git ls-tree for speed - if it fails (i.e. not in a git directory) default
-# to $FZF_DEFAULT_COMMAND
-export FZF_DEFAULT_COMMAND="(git ls-tree -r --name-only HEAD || $FZF_DEFAULT_COMMAND) 2>/dev/null"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Uncomment to use --inline-info option
