@@ -10,7 +10,7 @@
 #
 
 # Check for the minimum supported version.
-min_zsh_version='4.3.17'
+min_zsh_version='4.3.11'
 if ! autoload -Uz is-at-least || ! is-at-least "$min_zsh_version"; then
   printf "prezto: old shell detected, minimum required: %s\n" "$min_zsh_version" >&2
   return 1
@@ -34,9 +34,9 @@ function zprezto-update {
     if [[ "$orig_branch" == "master" ]]; then
       git fetch || return "$?"
       local UPSTREAM=$(git rev-parse '@{u}')
-      local LOCAL=$(git rev-parse @)
+      local LOCAL=$(git rev-parse HEAD)
       local REMOTE=$(git rev-parse "$UPSTREAM")
-      local BASE=$(git merge-base @ "$UPSTREAM")
+      local BASE=$(git merge-base HEAD "$UPSTREAM")
       if [[ $LOCAL == $REMOTE ]]; then
         printf "There are no updates.\n"
         return 0
