@@ -31,6 +31,3 @@
 [submodule "modules/interactive-cd/external"]
 	path = modules/interactive-cd/external
 	url = https://github.com/changyuheng/zsh-interactive-cd.git
-[submodule "modules/fzf/external"]
-	path = modules/fzf/external
-	url = https://github.com/junegunn/fzf.git
