@@ -34,16 +34,15 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'ssh' \
+  'homebrew' \
   'ruby' \
   'python' \
   'git' \
   'tmux' \
-  'homebrew' \
+  'fzf' \
   'gnu-utility' \
   'utility' \
   'completion' \
-  'fasd' \
-  'fzf' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'

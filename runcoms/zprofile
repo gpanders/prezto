@@ -16,11 +16,16 @@ elif [[ "$OSTYPE" == linux-gnu ]]; then
 fi
 
 #
+# Terminal
+#
+export TERMBG='light'
+
+#
 # Editors
 #
 
-export EDITOR='vi'
-export VISUAL='vi'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 # Use neovim if present
@@ -52,11 +57,9 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 # Set the list of directories that Zsh searches for programs.
-path=(
-  /usr/local/{bin,sbin}
-  $HOME/.go/bin
-  $path
-)
+# path=(
+#   $path
+# )
 
 #
 # Less
