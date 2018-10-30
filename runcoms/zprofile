@@ -16,11 +16,6 @@ elif [[ "$OSTYPE" == linux-gnu ]]; then
 fi
 
 #
-# Terminal
-#
-export TERMBG='light'
-
-#
 # Editors
 #
 
