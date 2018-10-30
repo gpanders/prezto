@@ -17,6 +17,9 @@ if [[ -d "${ZDOTDIR:-$HOME}/.zprezto/aliases" ]]; then
   done
 fi
 
+# Environment variable used by other processes to set colorschemes
+export TERMBG="light"
+
 # Pipe to multiple outputs
 setopt MULTIOS
 
