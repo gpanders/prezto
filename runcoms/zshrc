@@ -51,13 +51,3 @@ setopt NUMERIC_GLOB_SORT
 setopt EXTENDED_GLOB
 
 bindkey -M viins ' ' magic-space
-
-# Disable touchscreen
-xinput disable 9
-xinput disable 10
-xinput disable 17
-
-# Configure ROS
-if [ -f $HOME/.rosrc ]; then
-  source $HOME/.rosrc
-fi
