@@ -51,3 +51,6 @@ setopt NUMERIC_GLOB_SORT
 setopt EXTENDED_GLOB
 
 bindkey -M viins ' ' magic-space
+
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
