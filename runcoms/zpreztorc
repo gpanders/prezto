@@ -39,12 +39,14 @@ zstyle ':prezto:load' pmodule \
   'python' \
   'git' \
   'tmux' \
-  'fzf' \
   'gnu-utility' \
   'utility' \
   'completion' \
+  'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
+  'contrib-prompt' \
+  'contrib-fzf' \
   'prompt'
 
 #
