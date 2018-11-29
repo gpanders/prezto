@@ -38,10 +38,11 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'utility' \
   'completion' \
-  'fzf' \
   'tmux' \
   'syntax-highlighting' \
   'history-substring-search' \
+  'contrib-prompt' \
+  'contrib-fzf' \
   'prompt'
 
 #

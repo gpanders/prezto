@@ -55,5 +55,5 @@ setopt EXTENDED_GLOB
 
 bindkey -M viins ' ' magic-space
 
-bindkey '^P' up-line-or-search
-bindkey '^N' down-line-or-search
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
