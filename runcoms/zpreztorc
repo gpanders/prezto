@@ -33,6 +33,7 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'gpg' \
   'ssh' \
   'homebrew' \
   'ruby' \
