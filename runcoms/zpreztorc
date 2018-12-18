@@ -184,18 +184,18 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
   'pattern'
 
 # Set syntax highlighting styles.
-zstyle ':prezto:module:syntax-highlighting' styles \
-  'builtin'                         'fg=cyan' \
-  'command'                         'fg=cyan' \
-  'function'                        'fg=cyan' \
-  'alias'                           'fg=cyan' \
-  'hashed-command'                  'fg=cyan' \
-  'precommand'                      'fg=cyan,underline' \
-  'reserved-word'                   'fg=yellow'
+# zstyle ':prezto:module:syntax-highlighting' styles \
+#   'builtin'                         'fg=cyan' \
+#   'command'                         'fg=cyan' \
+#   'function'                        'fg=cyan' \
+#   'alias'                           'fg=cyan' \
+#   'hashed-command'                  'fg=cyan' \
+#   'precommand'                      'fg=cyan,underline' \
+#   'reserved-word'                   'fg=yellow'
 
 # Set syntax pattern styles.
-zstyle ':prezto:module:syntax-highlighting' pattern \
-  'rm*-rf*' 'fg=white,bold,bg=red'
+# zstyle ':prezto:module:syntax-highlighting' pattern \
+#   'rm*-rf*' 'fg=white,bold,bg=red'
 
 #
 # Terminal
@@ -234,7 +234,7 @@ zstyle ':prezto:module:fzf' tmux 'yes'
 # To add more color schemes of your own, consult
 # https://github.com/junegunn/fzf/wiki/Color-schemes and add values to the
 # color.zsh file accordingly
-zstyle ':prezto:module:fzf' colorscheme 'Solarized Light'
+zstyle ':prezto:module:fzf' colorscheme 'One Dark'
 
 #
 # Tmux
